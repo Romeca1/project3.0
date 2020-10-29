@@ -1,0 +1,63 @@
+body{
+	background-image: url('../img/createBlogImg.jpg');
+	padding: 0;
+	margin: 0;
+}
+.create_div{
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 5%;
+	background-color: lightblue;
+}
+form{
+	text-align: center;
+}
+textarea{
+	resize: none;
+	border:none;
+	background-color: #3198F3;
+	border-radius: 15px;
+	color:white;
+}
+.header_input{
+	margin-left: -14%;
+	padding: 5px 5px;
+	color:white;
+	border-radius:20px;
+	background-color: #3198F3;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+hr{
+	border:1px solid #3198F3;
+
+}
+.Create_btn{
+	border:none;
+	background-color: #3198F3;
+	color:white;
+	font-family: serif;
+	border-radius: 40px;
+	font-size: 50px
+}
+.Create_btn:hover{
+	background-color: white;
+	color:#3198F3;
+}
+.errors_div{
+	margin-left:35%;
+	margin-bottom:0;
+}
+span{
+	text-align: center;
+	background-color: red;
+	color:black;
+	
+	margin-left:55px;
+	text-decoration: none;
+}

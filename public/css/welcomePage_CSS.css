@@ -1,0 +1,41 @@
+body{
+	background-image: url('../img/welcomePageImg.jpg');
+	padding:0;
+	margin:0;
+}
+h1{
+	color:white;
+	font-size: 25px;
+}
+.head_div{
+	border-bottom:1px solid white;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+li{
+	float: left;
+}
+li a{
+	text-decoration: none;
+	display: block;
+	padding:10px 15px;
+	background-color: white;
+	color:black;
+	margin-top:10px;
+	border: 2px solid black;
+	border-radius:10px;
+}
+li a:hover{
+	background-color: #333;
+	color:white;
+}
+.btn_Reg{
+	margin-left:140px;
+}
+.btn_Log{
+	margin-left:15px;
+}

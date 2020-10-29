@@ -1,0 +1,92 @@
+body{
+	padding: 0;
+	margin:0;
+	background-image: url('../img/MyPostsImg.jpg');
+}
+.table_posts{
+	margin-left: 18%;
+	margin-right: 18%;
+	padding: 5px;
+	border:1px solid black;
+}
+.row_posts{
+	border-radius: 10px;
+}
+.back_to_homePage_btn{
+	padding: 15px 20px;
+	background-color: #333;
+	color:white;
+	text-decoration: none;
+	border-radius: 20px;
+}
+.body{
+	display: none;
+}
+h3{
+	font-size: 25px;
+	text-align: center;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin-left: 65px;
+	overflow: hidden;
+}
+li{
+	float: left;
+}
+li a{
+	padding: 15px 60px;
+}
+li a:hover{
+	text-decoration: none;	
+}
+button{
+	padding:0px 60px;
+	text-decoration: underline;
+	border:none;	
+}
+.row_posts{
+	border:1px solid black;
+}
+a{
+	color:white;
+}
+.Del_btn{
+	background-color: red;
+	color:white;
+}
+.UpD_btn{
+	background-color: blue;
+	color:white;	
+}
+.See_btn{
+	background-color: green;
+	color:white;
+}
+.Comment_btn{
+	background-color: black;
+	color:white;
+}
+.body_div{
+	 display:none;
+	 background-color: white;
+	 margin-right: 5px;
+	 padding-left: 5px;
+	 padding-right: 5px; 
+}
+.body_text{
+	font-size: 20px;
+	font-family: sans-serif;
+}
+.Close_btn{
+	border:none;
+	background-color: #ED6B5E;
+}
+.UpDate-form{
+	display: none;
+	margin-left:200px;
+}
+textarea{
+	resize: none;
+}

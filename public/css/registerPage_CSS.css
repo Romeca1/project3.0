@@ -1,0 +1,73 @@
+body{
+	background-image: url('../img/registerPageImg.jpg');
+}
+button{
+	position: absolute;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 15px 20px;
+	top:40%;
+	left:45%;
+}
+.form_div{
+	position: absolute;
+	top:20%;
+	left:35%;
+	border-radius: 5px;
+	border:1px solid black;
+	box-shadow: -1px -1px 3px 4px;
+	padding: 15px 100px;
+}
+.input_name_div, .input_password_div{
+	padding: 5px;
+}
+.submit_div{
+	margin-left:65px;
+	margin-top: 15px;
+}
+.a_forgotpassword{
+	color:white;
+	margin-left: 5px;
+}
+.a_forgotpassword:hover{
+	color:#76188C;
+}
+img{
+	width: 100px;
+	height: 100px;
+	margin-left: 55px;
+}
+input{
+	padding: 10px 20px;
+	border-radius: 4px;
+	background-color: #F1CF60;
+	color:white;
+}
+.input_submit_button{
+	background-color: #010101;
+	color:white;
+	border:none;
+	border-bottom:4px solid white;
+}
+.input_submit_button:hover{
+	background-color:#F1CF60 ;	 
+}
+.input-paragraph{
+	color :white;
+	font-family: arial;
+}
+.error_p{
+	background-color: #E3442B;
+	border:2px solid #9C1500;
+	border-radius: 4px;
+}
+ul{
+	list-style-type: none;
+	text-decoration: none;
+	margin-left: -15px;
+	background-color: #F78181;
+	color:red;
+	text-align: center;
+	border-radius: 10px;
+	padding:5px;
+}
