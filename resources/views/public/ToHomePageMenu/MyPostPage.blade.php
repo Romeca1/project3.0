@@ -28,12 +28,13 @@
 				</p>
 				<button class="Close_btn" id="{{$post->id}}">close</button>
 			</div>
-			<div class="UpDate-form">
-				<form method="post" action="">
+			<div class="UpDate-form" id="up{{$post->id}}">
+				<form action="{{asset('/posts/' . $post->id)}}" method="POST">
 					{{ csrf_field() }}
-					<input type="text" name="new_head" value="{{$post->head}}">
-					<br><textarea rows="5" cols="55" name="new_body">{{$post->body}}</textarea>
-					<br><input type="submit" value="Up Date">
+					@method('put')
+					<input type="text" name="new_head" >
+					<br><textarea rows="5" cols="55" name="new_body"></textarea>
+					<br><input type="submit" value="Update">
 				</form>
 			</div>
 			<ul>
@@ -44,11 +45,11 @@
 					     <button class="btn btn-danger">Delete Post</button>
 					</form>
 				</li>
-				<li class="UpD_btn"><a href="#">UpDate</a></li>
+				<li class="UpD_btn" id="{{$post->id}}"><button>Update</button></li>
 				
 				<li class="See_btn" id="{{$post->id}}"><button>See post</button></li>
 				
-				<li class="Comment_btn"><a>See comment</a></li>
+				<!--<li class="Comment_btn"><a>See comment</a></li>-->
 			</ul>
 		</div>
 	@endforeach
@@ -61,8 +62,9 @@
 			$(".table_posts").on("click",".row_posts .body_div .Close_btn",function(){
 				$("#b" + $(this).attr("id")).hide(500);
 			});
-			$(".table_posts").on("click",".row_posts ul li .UpD_btn a",function(){
-				//todo
+			$(".table_posts").on("click",".row_posts ul .UpD_btn",function(){
+				console.log($(this).attr("id"));
+				$("#up" + $(this).attr("id")).show(500);
 			});
 		});
 	</script>

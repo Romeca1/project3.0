@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="create_div">
-		<form method="post" action="{{url('/homePage/workbench/post')}}">
+		<form method="post" action="/posts">
 			{{csrf_field()}}
 			<input type="text" class="header_input" name="head" placeholder="header:"><br>
 			<hr>

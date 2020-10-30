@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeControler;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\CommentController;
 //Create post Route
 Route::get('/HomePage/Create/{log_user_id}',function($user_id)
 {
@@ -41,8 +41,8 @@ Route::get('/homePage',[PageController::class,"GetHomePage"]);
 Route::get('/homePage/workbench/create',[PageController::class,"GetCreatePostPage"]);
 Route::get('/homePage/profile',[PageController::class,"GetProfilePage"]);
 Route::get('/homePage/myPosts/upDate/{post_id}',[PageController::class,"GetUpDatePage"]);
-
 Route::get('/homePage/myPosts/delete/{post_id}',[PostController::class,"DeletePost"]);
+Route::post('/homePage/comment/{post_id}',[CommentController::class,"create"]);
 //All post routes
 Route::post('/register',[UserController::class,"RegisterValidating"]);
 Route::post('/login',[UserController::class,"LoginValidating"]);

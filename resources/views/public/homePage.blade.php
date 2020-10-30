@@ -9,43 +9,41 @@
 	<div class="nav_div">
 		<ul>
 			<li><a href="{{asset('/homePage/profile')}}">Profile</a></li>
-			<li><a href="{{asset('/homePage/post/show')}}">My posts</a></li>
+			<li><a href="{{asset('/posts')}}">My posts</a></li>
 			<li><a href="{{asset('/')}}">Log out</a></li>
 		</ul>
 	</div>
 	<div class="body_div">
 		
 		@if(isset($posts))
-			@foreach($posts as $value)		
+			@foreach($posts as $post)		
 				<div class="row_posts">
-					<h3>{{$value->head}}</h3>
+					<h3>{{$post->head}}</h3>
 					<div class="body_post">
-						<p class="body_text" id="p{{$value->id}}">
+						<p class="body_text" id="p{{$post->id}}">
 						<?php
 							$count = 1;
-							for ($i = 0;$i<strlen($value->body);$i++) {
+							for ($i = 0;$i<strlen($post->body);$i++) {
 								if($count == 60){
 									echo '<br>';
 									$count = 0;
 								}
 								$count++;
-								echo $value->body[$i];
+								echo $post->body[$i];
 							}
 						?>
 						</p>
 					</div>
 					<hr>
-					<div class="create-comment" id="f{{$value->id}}">
-						<form method="post" action="{{
-							url('/HomePage/' . session('user_id') . '/MyPosts/Comment/' . session('user_id'))
-						}}">
+					<div class="create-comment" id="f{{$post->id}}">
+						<form method="post" action="/homePage/comment/{{$post->id}}">
 						{{csrf_field()}}
 							<textarea name="comment" placeholder="Enter your comment:" rows="5" cols="65"></textarea>
 							<br>
 							<input class="sbmt_btn" type="submit" value="comment">
 						</form>
 						<div class="comments">
-							@foreach(App\Models\Comment::where("posts_id",$value->id)->get() as 	$comment)
+							@foreach(App\Models\Comment::where("posts_id",$post->id)->get() as 	$comment)
 								<h1>{{$comment->user_name}}</h1>
 								<?php
 									$bcount = 1;
@@ -62,8 +60,8 @@
 						</div>
 					</div>
 					<div class="btns">
-						<button class="btn_see" id="{{$value->id}}">See</button>
-						<button class="btn_see_comment" id="{{$value->id}}">Comments</button>
+						<button class="btn_see" id="{{$post->id}}">See</button>
+						<button class="btn_see_comment" id="{{$post->id}}">Comments</button>
 					</div>
 				</div>
 			@endforeach

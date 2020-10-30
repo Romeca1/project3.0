@@ -28,6 +28,7 @@ class PostController extends Controller
     public function create()
     {
         //
+        return view();
     }
     /**
      * Store a newly created resource in storage.
@@ -42,7 +43,7 @@ class PostController extends Controller
             'head' => $request['head'],
             'body' => $request['body']
         ]);
-        return redirect('/posts/show');
+        return redirect('/posts');
     }
 
     /**
@@ -54,7 +55,8 @@ class PostController extends Controller
     public function show($id)
     {
         //
-        
+        $post = Post::findOrFail($id);
+        //return $post;
     }
 
     /**
@@ -63,10 +65,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit()
     {
-        //
-        
+       
     }
 
     /**
@@ -76,12 +77,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request,Post $post)
+    public function update($id,Request $request)
     {
-        //
+        $post = Post::find($id);
         $post->head = $request['new_head'];
         $post->body = $request['new_body'];
         $post->save();
+        return redirect('/posts');
     }
 
     /**
@@ -93,6 +95,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect('posts');
+        return redirect('/posts');
     }
 }

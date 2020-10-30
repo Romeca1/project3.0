@@ -12,7 +12,7 @@ class PageController extends Controller
     }
     public function GetHomePage()
     {
-    	return view('public.homePage');
+    	return view('public.homePage',['posts' => Post::all()]);
     }
     public function GetCreatePostPage()
     {
